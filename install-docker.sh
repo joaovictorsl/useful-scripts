@@ -37,3 +37,5 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 echo -e "${GREEN}====> DONE!${NO_COLOR}"
+
+newgrp docker
