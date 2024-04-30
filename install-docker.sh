@@ -29,7 +29,6 @@ sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
 # Manage Docker as a non-root user
-sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
 
