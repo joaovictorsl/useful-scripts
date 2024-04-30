@@ -23,14 +23,14 @@ sudo apt-get update
 echo ====\> INSTALLING DOCKER
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y &&
 
-# Manage Docker as a non-root user
+# Configure Docker to start on boot with systemd
 echo ====\> RUNNING POSTINSTALL STUFF
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+
+# Manage Docker as a non-root user
 sudo groupadd docker
 sudo usermod -aG docker $USER
 newgrp docker
-
-# Configure Docker to start on boot with systemd
-sudo systemctl enable docker.service
-sudo systemctl enable containerd.service
 
 echo ====\> DONE!
